@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block container %}
+
+<div class="grid md:grid-cols-2 gap-10 items-center min-h-[70vh]">
+    <div>
+        <h1 class="text-5xl font-bold text-[#A66343] mb-6">
+            Sistema de Pizzeria
+        </h1>
+        <div class="flex gap-6 mt-8">
+            <a href="{{ url_for('pedidos.pedido') }}"
+                class="bg-[#A66343] hover:bg-[#8A5236] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition duration-200">
+                Nuevo Pedido
+            </a>
+            <a href="{{ url_for('ventas.listado_ventas') }}"
+                class="border-2 border-[#A66343] text-[#A66343] font-semibold px-6 py-3 rounded-xl hover:bg-[#A66343] hover:text-white">
+                Consultar Ventas
+            </a>
+        </div>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-10 flex items-center justify-center">
+        <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Logo Pizzeria"
+            class="max-h-56 w-auto object-contain">
+    </div>
+</div>
+
+{% endblock %}

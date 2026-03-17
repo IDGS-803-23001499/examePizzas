@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliPizza</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
+</head>
+
+<body class="bg-[#F6E7E0]">
+    <nav class="bg-[#A66343] shadow-lg">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center p-4">
+            <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
+                <img src="{{ url_for('static', filename='img/logo1.png') }}" class="h-6 w-auto" alt="Logo Pizzeria">
+                <span class="text-white text-xl font-bold">
+                    DeliPizza
+                </span>
+            </a>
+            <ul class="flex space-x-8 text-white font-medium">
+                <li>
+                    <a href="{{ url_for('home') }}" class="hover:text-orange-200">Inicio</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('pedidos.pedido') }}" class="hover:text-orange-200">Nuevo Pedido</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('ventas.listado_ventas') }}" class="hover:text-orange-200">Consultas</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="max-w-screen-xl mx-auto mt-8">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="mb-6 p-4 bg-emerald-200 text-emerald-900 rounded-lg shadow">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block container %}
+        {% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>
