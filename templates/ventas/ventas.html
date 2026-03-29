@@ -12,7 +12,7 @@
         <form method="POST">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <input type="hidden" name="tipo_consulta" value="dia">
-            <input name="dia" placeholder="lunes, martes..." class="w-full border p-2 rounded mb-3">
+            <input name="dia" placeholder="Ingrese el dia de la semana a buscar" class="w-full border p-2 rounded mb-3">
             <button class="bg-[#A66343] hover:bg-[#8A5236] text-white px-4 py-2 rounded">
                 Buscar
             </button>
@@ -25,7 +25,7 @@
         <form method="POST">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <input type="hidden" name="tipo_consulta" value="mes">
-            <input name="mes" placeholder="enero, febrero..." class="w-full border p-2 rounded mb-3">
+            <input name="mes" placeholder="Ingrese el mes a buscar" class="w-full border p-2 rounded mb-3">
             <button class="bg-[#A66343] hover:bg-[#8A5236] text-white px-4 py-2 rounded">
                 Buscar
             </button>
